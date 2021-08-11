@@ -28,6 +28,7 @@ const updateUser = (criteria, dataToSet, options) =>
       .catch(err => reject(err));
   });
 
+
 const deleteUser = criteria =>
   new Promise((resolve, reject) => {
     Models.findOneAndRemove(criteria)
