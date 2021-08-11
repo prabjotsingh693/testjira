@@ -24,7 +24,7 @@ app.use(cors());
 app.use((err, req, res, next) => {
   return res.send({
     "statusCode": 401,
-    "statusMessage": "Something went Wrong!!!'"
+    "statusMessage" : "Something went Wrong!!!'"
   });
 });
 
