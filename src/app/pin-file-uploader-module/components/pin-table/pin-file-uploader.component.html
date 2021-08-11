@@ -1,0 +1,13 @@
+
+<p-fileUpload 
+    name="files[]" 
+    [url]="uploadUrl" 
+    multiple="multiple" 
+    [maxFileSize]="_config.maxFileSize"
+    [accept]="_config.accept"
+    [fileLimit]="_config.fileLimit"
+    [mode]="_config.mode"
+    (onUpload)="onSuccessUpload($event)"
+    (onError)="onErrorUpload($event)"
+>
+</p-fileUpload>

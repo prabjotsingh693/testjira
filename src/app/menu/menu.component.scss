@@ -1,0 +1,26 @@
+a{
+  color: #fff;
+}
+
+.left-name {
+  position: absolute;
+  left: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.right-name {
+  position: absolute;
+  right: 1em;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  list-style-type: none;
+
+  
+}
+
+a:hover{
+  // color: white;
+  color: #f5fafd;;
+}

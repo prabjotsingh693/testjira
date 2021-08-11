@@ -1,0 +1,55 @@
+<div id="login" class="bgcolor">
+    <h2 class="text-center text-black pt-5 title">Product Detail</h2>
+<div class="container ">
+<div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+            <form class="form" #productform="ngForm" (ngSubmit)="createProduct(productform)" novalidate>
+            
+                <div class="form-group">
+                    <label for="tagnumber" class="text-info">Tag Number:</label><br>
+                    <input type="text" minlength="6" [(ngModel)]="prodObj.tagNumber" placeholder="Tag Number" name="tagnumber" id="tagnumber" class="form-control" required #tnum="ngModel" pattern="^[A-Za-z0-9]+">
+                    <p *ngIf="(tnum.invalid && productform.submitted) || tnum.invalid && (tnum.dirty || tnum.touched)" class="invalid-msg">
+                        <span style="color: red;">
+                            Enter Valid Data!!!
+                        </span>
+                    </p>
+                </div>
+                  <div class="form-group">
+                    <label for="productname" class="text-info">Product Name:</label><br>
+                    <input type="text" name="productname" #pname="ngModel" [(ngModel)]="prodObj.productName" placeholder="Product Name" id="productname" required class="form-control">
+                    <p *ngIf="(pname.invalid && productform.submitted) || pname.invalid && (pname.dirty || pname.touched)" class="invalid-msg">
+                        <span style="color: red;">
+                            Enter Valid Data!!!
+                        </span>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="serialnumber" class="text-info">Serial Number:</label><br>
+                    <input type="text" name="serialnumber" #Snum="ngModel" [(ngModel)]="prodObj.serialNumber" placeholder="Serial Number" id="serialnumber" required class="form-control">
+                    <p *ngIf="(Snum.invalid && productform.submitted) || Snum.invalid && (Snum.dirty || Snum.touched)" class="invalid-msg">
+                        <span style="color: red;">
+                            Enter Valid Data!!!
+                        </span>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-info">Description:</label><br>
+                    <input type="text" name="description" [(ngModel)]="prodObj.description" placeholder="Description" id="description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="photo" class="text-info">Photo:</label><br>
+                    <pin-file-uploader *ngIf="config" [data]="data" [config]="config.uploadConfig" (onEvent)="handleEvent($event)"></pin-file-uploader>
+                    <!-- <input type="file" name="photo" id="photo" [(ngModel)]="prodObj.photo" placeholder="Photo" class="form-control"> -->
+                </div>
+                
+                <div style="padding: 20px;">
+                    <button style="margin-right: 10px"  class="btn btn-info btn-md primary-btn" type="submit" >Submit</button>
+                    <button  class="btn btn-info btn-md  primary-btn" routerLink="/product-detail-list">Cancel</button>
+                </div> 
+                </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>

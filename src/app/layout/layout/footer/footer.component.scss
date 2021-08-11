@@ -1,0 +1,102 @@
+.main-contain{
+    margin-top: 20px;
+}
+.navbar-brand {
+    .logo {
+        img {
+            margin-right: 1em;
+            height: 45px;
+            margin-left: -14px;
+        }
+    }
+}
+.social-icon {
+    border: 1px solid rgba(0, 0, 0, .1);
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+.social-connect {
+    img {
+        height: 21px;
+    }
+    .youtube{
+        width: 21px;
+    }
+}
+
+.title{
+    font-size: 17px;
+    color: #22262A;
+    margin-bottom: 10px;
+}
+.detail{
+    font-size: 14px;
+    color: #000000;
+}
+.list{
+    padding: 0;
+    li{
+        &:hover{
+            background-color: #F2F9F8;
+            cursor: pointer;
+        }
+        list-style: none;
+        a{
+            text-decoration: none;
+            font-size: 14px;
+            color: #007AED;
+            line-height: 2;
+            padding-left: 11px;  
+        }
+    }
+
+}
+
+.copy-right{
+    font-size: 14px;
+    color: rgb(36, 35, 35);
+}
+.footer-img{
+    img{
+        margin: 0px 3px;
+    }
+}
+
+
+
+
+.modal-header {
+    color: white;
+    background-image: linear-gradient(250deg, #156789, #00b7b7);
+}
+
+.error-border {
+    border: 1.5px solid red !important;
+}
+
+international-phone-number ::ng-deep .input-group ::ng-deep .input-group-addon {
+    background: transparent;
+    margin-top: -6px;
+}
+
+international-phone-number ::ng-deep .input-group ::ng-deep input {
+    margin-top: -7px;
+    background: transparent;
+    border: none;
+    /* border-left:1px solid red */
+}
+
+international-phone-number ::ng-deep .input-group ::ng-deep input:focus {
+    box-shadow: none;
+}
+
+international-phone-number ::ng-deep .input-group ::ng-deep .input-group-addon ::ng-deep .dropdown ::ng-deep button:focus {
+    box-shadow: none;
+    border: none;
+}

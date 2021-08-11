@@ -1,0 +1,47 @@
+<div class="bg-img">
+    <form name="login" class="login-form" #loginForm="ngForm" (ngSubmit)="LoginUser(loginForm)" novalidate>
+        <div class="text-center">
+            <h4>
+                Welcome To <br /> Lost-N-Found
+            </h4>
+        </div>
+
+        <br />
+        <div class="text-box">
+            <!-- <input type="email" [(ngModel)]="email" email="true" pInputText class="form-control" name="email" autocomplete="false" id="email" aria-describedby="emailHelp" #mail="ngModel" required /> -->
+            <input type="email" name="email" id="email" email="true" pInputText autocomplete="off"  [(ngModel)]="loginObj.email"  aria-describedby="emailHelp" #mail="ngModel" required  class="form-control">
+            <span data-placeholder="Email"></span>
+                <p *ngIf="
+                    (mail.invalid && loginForm.submitted) ||
+                    (mail.invalid && (mail.dirty || mail.touched))
+                    " class="invalid-msg">
+                    Email is required.
+                </p>
+        </div>
+
+        <div class="text-box"> 
+            <!-- <input [(ngModel)]="password" type="password" class="form-control" name="password" id="password" pInputText autocomplete="false" #pass="ngModel" required /> -->
+            <input type="password" name="password" id="password" autocomplete="off"  #pass="ngModel" pInputText [(ngModel)]="loginObj.password" #password="ngModel" class="form-control">
+
+            <span data-placeholder="Password"></span>
+            <p *ngIf="
+          (pass.invalid && loginForm.submitted) ||
+          (pass.invalid && (pass.dirty || pass.touched))
+        " class="invalid-msg">
+                Password is required.
+            </p>
+        </div>
+
+        <div>
+            <p *ngIf="errorFlag" class="invalid-msg1">
+                Invalid Email/Password
+            </p>
+        </div>
+
+        <input pButton type="Submit" class="logbtn" value="Login" />
+        <div class="bottom-text">
+            <a class="mt-10 text-center " routerLink="/user-registration">Create Account</a>
+        </div>
+    </form>
+    <div class="ui-g-12 text-center"></div>
+</div>

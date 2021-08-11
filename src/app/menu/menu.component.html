@@ -1,0 +1,14 @@
+
+<nav class="navbar navbar-inverse topbarBg">
+<div class="container-fluid">
+  <div class="navbar-header left-name">
+    <a class="navbar-brand" style="color: white;"  href="#">Welcome To Lost-N-Found</a>
+  </div>
+  <ul class=" right-name" > 
+      <li *ngIf="isLoggedIn" (click)="logout()"><a>Logout</a></li>
+      <li *ngIf="!isLoggedIn "><a routerLink="/login">Login</a></li>
+      
+  </ul>
+</div>
+</nav>
+

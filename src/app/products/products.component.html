@@ -1,0 +1,66 @@
+<div class="uk-section">
+  <div class="uk-container uk-container-large">
+    <h1>Strapi blog</h1>
+
+    <div class="uk-child-width-1-2" uk-grid>
+      <div>
+        <a
+          routerLink="/product/{{ product.id }}"
+          routerLinkActive="active"
+          *ngFor="let product of leftProducts"
+          class="uk-link-reset"
+        >
+          <div class="uk-card uk-card-muted">
+            <div *ngIf="product.photos" class="uk-card-media-top">
+              <img
+                src="http://localhost:1337{{ product.photos[0].url }}"
+                alt=""
+                height="100"
+              />
+            </div>
+            <div class="uk-card-body">
+              <p
+                id="user"
+                *ngIf="product.user"
+                class="uk-text-uppercase"
+              >
+                {{ product.user.username }}
+              </p>
+              <p id="name" class="uk-text-large">{{ product.name }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div>
+        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+          <a
+            routerLink="/product/{{ product.id }}"
+            routerLinkActive="active"
+            *ngFor="let product of rightProducts"
+            class="uk-link-reset"
+          >
+            <div class="uk-card uk-card-muted">
+              <div *ngIf="product.photos" class="uk-card-media-top">
+                <img
+                  src="http://localhost:1337{{ product.photos[0].url }}"
+                  alt=""
+                  height="100"
+                />
+              </div>
+              <div class="uk-card-body">
+                <p
+                  id="user"
+                  *ngIf="product.user"
+                  class="uk-text-uppercase"
+                >
+                  {{ product.user.username }}
+                </p>
+                <p id="name" class="uk-text-large">{{ product.name }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

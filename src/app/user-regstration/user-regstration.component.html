@@ -1,0 +1,132 @@
+<div class="bgcolor">
+<div id="login">
+    <h2 class="text-center text-black pt-5 title">Registration Form</h2>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form class="form" #registration="ngForm" (ngSubmit)="userRegistration(registration)" novalidate>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstname" class="text-info">First Name:</label><br>
+                                    <input type="text" name="fname" id="fname" minlength="2"
+                                        class="form-control" pattern="^[0-9]" #fName="ngModel" pattern="[A-Z,a-z]{1,15}"
+                                        autocomplete="off" pInputText placeholder="First-Name"
+                                        [(ngModel)]="userObj.firstName" required>
+                                </div>
+                                <p *ngIf="(fName.invalid && registration.submitted) || fName.invalid && (fName.dirty || fName.touched)" class="invalid-msg">
+                                    <span style="color: red;">
+                                        Enter Valid Data!!!
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lasttname" class="text-info">Last Name:</label><br>
+                                    <input type="text" name="lname" id="lname" class="form-control"
+                                        placeholder="Last-Name" required [(ngModel)]="userObj.lastName" pattern="^[0-9]"
+                                        #lName="ngModel" pattern="[A-Z,a-z]{1,15}" minlength="2">
+                                </div>
+                                <p *ngIf="(lName.invalid && registration.submitted) || lName.invalid && (lName.dirty || lName.touched)" class="invalid-msg">
+                                    <span style="color: red;">
+                                        Enter Valid Data!!!
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="mobilenumber" class="text-info">Mobile Number:</label><br>
+                                    <input type="text" name="mobilenumber" id="mobilenumber" minlength="10"
+                                        maxlength="10" class="form-control" placeholder="Mobile Number" required
+                                        [(ngModel)]="userObj.phone" pattern="[0-9]{10}" #mNumber="ngModel">
+                                </div>
+                                <p *ngIf="(mNumber.invalid && registration.submitted) || mNumber.invalid && (mNumber.dirty || mNumber.touched)" class="invalid-msg">
+                                    <span style="color: red;">
+                                       Enter Valid Data!!!
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="address" class="text-info">Address:</label><br>
+                                <input type="text" name="address" id="address" class="form-control"
+                                    placeholder="Address" [(ngModel)]="userObj.address">
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="area" class="text-info">Area:</label><br>
+                                    <input type="text" name="area" id="area" class="form-control" placeholder="Area" [(ngModel)]="userObj.area" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city" class="text-info">City:</label><br>
+                                    <input type="text" name="city" id="city" class="form-control" placeholder="City" [(ngModel)]="userObj.city">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="state" class="text-info">State:</label><br>
+                                    <input type="text" name="state" id="state" class="form-control" placeholder="State" [(ngModel)]="userObj.state">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country" class="text-info">Country:</label><br>
+                                    <input type="text" name="country" id="country" class="form-control" placeholder="Country" [(ngModel)]="userObj.country">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="emailid" class="text-info">email:</label><br>
+                                    <input type="email" name="emailid" id="emailid" class="form-control"
+                                        placeholder="emailid" required [(ngModel)]="userObj.email" #email="ngModel"
+                                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                </div>
+                                <p  *ngIf="(email.invalid && registration.submitted) || email.invalid && (email.dirty || email.touched)" class="invalid-msg">
+                                    <span style="color: red;">
+                                        Enter valid Data...!!!
+                                    </span>
+                                </p>
+                                <p  *ngIf="isRegistered" class="invalid-msg">
+                                    <span style="color: red;">
+                                       email id already existed...!!
+                                    </span>
+                                </p>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control" #pwd= "ngModel"
+                                    placeholder="Password" required [(ngModel)]="userObj.password">
+                            </div>
+                            <p  *ngIf="(pwd.invalid && registration.submitted) || pwd.invalid && (pwd.dirty || pwd.touched)" class="invalid-msg">
+                                <span style="color: red;">
+                                    Enter valid Data...!!!
+                                </span>
+                            </p>
+                        </div>
+                </div>
+                <div class="button-routing " style="padding: 20px;">
+                    <button type="submit" style="margin-right: 7px;" class="btn btn-info btn-md  primary-btn">Submit</button>
+                    <button type="text" style="margin-right: 7px;" class="btn btn-info btn-md  primary-btn" routerLink="/login">Cancel</button>
+                    <button type="reset" style="margin-right: 7px;" class="btn btn-info btn-md  primary-btn" value="Reset"
+                        (click)="resetUserObj()">Reset</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
