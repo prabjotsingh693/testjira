@@ -2,6 +2,7 @@ const config = require("../Utilities/config").config;
 const UserDAO = require('../DAO/userDAO');
 const MD5 = require('md5');
 
+
 /* API to register new user */
 let register = async (req, res) => {
   if (!req.body.email || !req.body.password) {
@@ -45,11 +46,11 @@ let login = async (req, res) => {
   } else {
     try {
       let criteria = {
-        email: req.body.email,
+        email: req.body.email ,
         status: true
       };
       const checkEmail = await UserDAO.getUsers(criteria);
-      if (checkEmail) {
+      if (checkEmail ) {
         let criteria = {
           email: req.body.email,
           password: MD5(MD5(req.body.password))
@@ -64,7 +65,7 @@ let login = async (req, res) => {
         res.status(401).json({message:'Email not exist!'});
       }
     } catch (error) {
-      res.status(401).json({message:'Something went wrong',error:error});
+      res.status(401).json({message:'"Something went wrong"',error:error});
     }
   }
 };

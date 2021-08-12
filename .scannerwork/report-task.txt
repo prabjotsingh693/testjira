@@ -2,5 +2,5 @@ projectKey=testjira
 serverUrl=http://ec2-35-173-35-246.compute-1.amazonaws.com:9000
 serverVersion=7.5.0.20543
 dashboardUrl=http://ec2-35-173-35-246.compute-1.amazonaws.com:9000/dashboard?id=testjira
-ceTaskId=AXsw9ZTG6-NJlGZ3zFoA
-ceTaskUrl=http://ec2-35-173-35-246.compute-1.amazonaws.com:9000/api/ce/task?id=AXsw9ZTG6-NJlGZ3zFoA
+ceTaskId=AXs6qSKJ6-NJlGZ3zFoB
+ceTaskUrl=http://ec2-35-173-35-246.compute-1.amazonaws.com:9000/api/ce/task?id=AXs6qSKJ6-NJlGZ3zFoB
